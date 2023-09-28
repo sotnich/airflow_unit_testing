@@ -1,0 +1,5 @@
+db_name = 'demo'
+schema_name = 'demo'
+bucket_name = 'demo'
+pg_conn_id = 'postgres_db'
+s3_conn_id = 'minio'

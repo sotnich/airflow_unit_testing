@@ -1,0 +1,80 @@
+[
+  {
+    "id": 325,
+    "uid": "09292aaf-c803-4f57-b78c-a0ef269da262",
+    "password": "70FZgPomkK",
+    "first_name": "Cody",
+    "last_name": "Schimmel",
+    "username": "cody.schimmel",
+    "email": "cody.schimmel@email.com",
+    "avatar": "https://robohash.org/quiadoloremin.png?size=300x300\u0026set=set1",
+    "gender": "Polygender",
+    "phone_number": "+421 (410) 884-4079 x26760",
+    "social_insurance_number": "954030755",
+    "date_of_birth": "1959-03-08",
+    "employment": {
+      "title": "Regional Assistant",
+      "key_skill": "Work under pressure"
+    },
+    "address": {
+      "city": "Haleymouth",
+      "street_name": "Ernest Turnpike",
+      "street_address": "62253 Rogahn Square",
+      "zip_code": "89329",
+      "state": "Rhode Island",
+      "country": "United States",
+      "coordinates": {
+        "lat": 63.89076635448606,
+        "lng": -24.950049140887188
+      }
+    },
+    "credit_card": {
+      "cc_number": "4542-2726-0332-7802"
+    },
+    "subscription": {
+      "plan": "Basic",
+      "status": "Active",
+      "payment_method": "Credit card",
+      "term": "Full subscription"
+    }
+  },
+  {
+    "id": 7135,
+    "uid": "8e5df1e1-7d56-4dd5-982a-9b8e6d244be1",
+    "password": "zCxHOvhl9J",
+    "first_name": "Ora",
+    "last_name": "Sipes",
+    "username": "ora.sipes",
+    "email": "ora.sipes@email.com",
+    "avatar": "https://robohash.org/doloribusreprehenderitexpedita.png?size=300x300\u0026set=set1",
+    "gender": "Non-binary",
+    "phone_number": "+45 1-618-097-1492 x622",
+    "social_insurance_number": "621589431",
+    "date_of_birth": "1980-02-28",
+    "employment": {
+      "title": "Principal Government Coordinator",
+      "key_skill": "Problem solving"
+    },
+    "address": {
+      "city": "Toryburgh",
+      "street_name": "Price Expressway",
+      "street_address": "57639 Zieme Estates",
+      "zip_code": "76658",
+      "state": "Texas",
+      "country": "United States",
+      "coordinates": {
+        "lat": 78.5952918191118,
+        "lng": -141.48916457613325
+      }
+    },
+    "credit_card": {
+      "cc_number": "4347-1524-4600-5178"
+    },
+    "subscription": {
+      "plan": "Business",
+      "status": "Idle",
+      "payment_method": "Paypal",
+      "term": "Monthly"
+    }
+  }
+]
