@@ -4,7 +4,6 @@ from airflow.datasets import Dataset
 from dags.config import s3_conn_id, bucket_name, db_name, pg_conn_id, schema_name
 
 source_table = 'source'
-url = "https://random-data-api.com/api/v2/users?response_type=json&size=50"
 key = "users-{data_interval_start}.csv"
 
 
