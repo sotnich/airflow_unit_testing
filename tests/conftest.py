@@ -19,36 +19,36 @@ if not os.path.exists(airflow_home_dir):
     os.system('airflow db migrate')
 
 
-def init_db(hook):
-    is_db_exists = len(hook.get_records(f"SELECT 1 FROM pg_database WHERE datname = '{db_name}'")) != 0
+@pytest.fixture(scope="session", autouse=True)
+def init_db(db_hook):
+    is_db_exists = len(db_hook.get_records(f"SELECT 1 FROM pg_database WHERE datname = '{db_name}'")) != 0
     if not is_db_exists:
-        hook.run(f"CREATE DATABASE {db_name}", autocommit=True)
-    hook.schema = db_name
-    hook.run(f"CREATE SCHEMA IF NOT EXISTS {schema_name}", autocommit=True)
+        db_hook.run(f"CREATE DATABASE {db_name}", autocommit=True)
+    db_hook.schema = db_name
+    db_hook.run(f"CREATE SCHEMA IF NOT EXISTS {schema_name}", autocommit=True)
 
 
-def init_minio(hook):
+@pytest.fixture(scope="session", autouse=True)
+def init_minio(s3_hook):
     try:
-        hook.create_bucket(bucket_name=bucket_name)
+        s3_hook.create_bucket(bucket_name=bucket_name)
     except Exception as e:
         if len(e.args) == 1 and type(e.args[0]) == str and 'BucketAlreadyOwnedByYou' in e.args[0]:
             return
         raise
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session")
 def db_hook():
     from airflow.providers.postgres.hooks.postgres import PostgresHook
     hook = PostgresHook(postgres_conn_id=pg_conn_id)
-    init_db(hook=hook)
     return hook
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session")
 def s3_hook():
     from airflow.providers.amazon.aws.hooks.s3 import S3Hook
     hook = S3Hook(aws_conn_id=s3_conn_id)
-    init_minio(hook=hook)
     return hook
 
 
